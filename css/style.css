@@ -417,7 +417,8 @@
         }
 
         /* grids stack vertically on smaller screens */
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
+            /* vertical stacks for most grids including contact earlier */
             .stats-grid,
             .process-grid,
             .work-types-grid,
@@ -439,6 +440,15 @@
             .about-showcase {
                 grid-template-columns: 1fr;
             }
+        }
+        @media (max-width: 768px) {
+            /* ensure about-showcase remains single column with tighter gap */
+            .about-showcase {
+                grid-template-columns: 1fr !important;
+                gap: 40px;
+            }
+        
+            
             .about-stats-carousel {
                 order: -1;
                 margin-bottom: 50px;
@@ -488,6 +498,35 @@
             .legal-info p {
                 font-size: 14px;
             }
+        }
+
+        /* extra slimming for very narrow screens */
+        @media (max-width: 500px) {
+            body { font-size: 13px; }
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            h3 { font-size: 22px; }
+            .container { padding: 0 15px; }
+            .hero { padding: 80px 20px 40px; }
+            .hero-title { font-size: 48px; }
+            .nav-menu a { font-size: 16px; padding: 15px 0; }
+            .work-type-card, .process-card, .fact-card, .why-us-card, .service-card, .contact-card, .partners-section {
+                padding: 20px 15px;
+            }
+            .work-type-card i,
+            .process-icon,
+            .fact-card i,
+            .why-us-card i,
+            .service-icon,
+            .contact-icon,
+            .partner-item i {
+                font-size: 1.5rem;
+            }
+            .footer-grid { gap: 20px; }
+            .footer-col h4 { font-size: 18px; }
+            .footer-col ul a,
+            .footer-col p { font-size: 13px; }
+        
             .contact-details h3,
             .legal-info h3 {
                 font-size: 24px;
@@ -522,9 +561,12 @@
             }
             .nav-menu.active { display: flex; z-index: 9999; }
             .nav-menu a {
-                padding: 15px;
+                padding: 20px 0; /* more vertical breathing room */
                 border-bottom: 1px solid rgba(197,165,114,0.1);
                 font-size: 18px;
+            }
+            .nav-menu {
+                gap: 40px; /* increase distance between items */
             }
             .menu-toggle { display: block; }
         }
@@ -543,9 +585,44 @@
             display: inline-block;
         }
 
+        .dropdown-trigger {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 10px !important;
+            position: relative !important;
+            width: 100% !important;
+            cursor: pointer !important;
+            user-select: none !important;
+            z-index: 1002 !important; /* keep trigger above dropdown panel if they ever overlap */
+        }
+
+        .dropdown-trigger span {
+            flex: 1 !important;
+            pointer-events: none !important;
+        }
+
+        .dropdown-trigger::after {
+            content: '▼' !important;
+            font-size: 0.8rem !important;
+            transition: transform 0.3s ease !important;
+            flex-shrink: 0 !important;
+            color: #FFFFFF !important;
+            pointer-events: none !important;
+            margin-left: auto !important; /* push arrow to the far right edge */
+            position: relative !important; /* ensure it stays in flow */
+        }
+
+        .dropdown.open .dropdown-trigger::after {
+            transform: rotate(180deg) !important;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
+            /* ensure dropdown panel appears below trigger rather than overlapping it */
+            top: 100%;
+            left: 0;
             background: rgba(3, 3, 3, 0.95);
             backdrop-filter: blur(10px);
             min-width: 250px;
@@ -556,8 +633,43 @@
             padding: 15px;
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown:hover:not(.open) .dropdown-content {
             display: block;
+        }
+        /* mobile friendly dropdown: allow tap to open/close */
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            /* make dropdowns expandable full-width and easier to read */
+            .dropdown {
+                width: 100%;
+                position: relative;
+            }
+            .dropdown-trigger {
+                padding: 15px 20px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .dropdown-content {
+                position: static;
+                background: rgba(0,0,0,0.95);
+                backdrop-filter: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 20px; /* match parent link padding */
+                margin-top: 5px;
+                width: 100%;
+                box-sizing: border-box;
+                display: none;
+            }
+            .dropdown.open .dropdown-content {
+                display: block;
+            }
+            .dropdown-content a {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
         }
 
         .dropdown-content a {
@@ -1085,6 +1197,23 @@
             background: rgba(197, 165, 114, 0.1);
             border: 1px solid rgba(197, 165, 114, 0.1);
             margin-top: 60px;
+        }
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .service-card {
+                padding: 20px 15px;
+            }
+            .service-card h3 { font-size: 18px; }
+            .service-icon i { font-size: 2rem; }
         }
 
         .service-card {
@@ -1778,6 +1907,17 @@
             gap: 50px;
             margin-bottom: 50px;
         }
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         .footer-col h4 {
             font-size: 20px;
@@ -1820,6 +1960,12 @@
             font-size: 14px;
             flex-wrap: wrap;
             gap: 20px;
+        }
+        @media (max-width: 576px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         .footer-social {
