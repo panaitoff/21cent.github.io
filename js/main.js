@@ -16,14 +16,16 @@
             if (opening) {
                 _scrollPos = window.pageYOffset || document.documentElement.scrollTop;
                 body.style.top = `-${_scrollPos}px`;
+                menu.classList.add('active');
+                body.classList.add('menu-open');
             } else {
+                menu.classList.remove('active');
+                body.classList.remove('menu-open');
                 body.style.top = '';
                 window.scrollTo(0, _scrollPos);
                 // when closing menu, also collapse any open dropdowns inside
                 document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
             }
-            menu.classList.toggle('active');
-            body.classList.toggle('menu-open');
         }
 
         // ensure menu closes when resizing to large screen
@@ -55,6 +57,9 @@
             }
             
             lastScrollTop = scrollTop;
+            
+            // Запускаем проверку параллакс-блоков при любом скролле
+            checkReveal();
         });
 
         // handle tap-to-toggle for dropdowns on small screens
@@ -67,21 +72,24 @@
                 }
             });
             
-            // add click handlers to each trigger (bubble phase is sufficient now)
+            // add a top‑level click listener to prevent the anchor from
+            // jumping to the top of the page; actual open/close logic is
+            // executed only on narrow screens.
             document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
                 trigger.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const dropdownEl = this.closest('.dropdown');
-                    if (!dropdownEl) return false;
-                    const isOpen = dropdownEl.classList.contains('open');
-                    // close others
-                    document.querySelectorAll('.dropdown.open').forEach(d => {
-                        if (d !== dropdownEl) d.classList.remove('open');
-                    });
-                    // toggle this one
-                    if (isOpen) dropdownEl.classList.remove('open');
-                    else dropdownEl.classList.add('open');
+                    if (window.innerWidth <= 768) {
+                        const dropdownEl = this.closest('.dropdown');
+                        if (!dropdownEl) return false;
+                        const isOpen = dropdownEl.classList.contains('open');
+                        // close others first
+                        document.querySelectorAll('.dropdown.open').forEach(d => {
+                            if (d !== dropdownEl) d.classList.remove('open');
+                        });
+                        if (isOpen) dropdownEl.classList.remove('open');
+                        else dropdownEl.classList.add('open');
+                    }
                     return false;
                 });
             });
@@ -184,16 +192,30 @@
         
         function checkReveal() {
             reveals.forEach(reveal => {
-                const revealTop = reveal.getBoundingClientRect().top;
+                const rect = reveal.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
+                const threshold = 100;
                 
-                if (revealTop < windowHeight - 100) {
-                    reveal.classList.add('active');
+                // Элемент видим, если его верхняя часть выше нижнего края окна
+                // И его нижняя часть ниже верхнего края окна
+                const isInViewport = rect.top < windowHeight - threshold && rect.bottom > threshold;
+                
+                if (isInViewport) {
+                    // Элемент в видимой части - добавляем класс
+                    if (!reveal.classList.contains('active')) {
+                        reveal.classList.add('active');
+                    }
+                } else {
+                    // Элемент вне видимости - удаляем класс
+                    // Это позволяет анимации срабатывать повторно при скролле
+                    if (reveal.classList.contains('active')) {
+                        reveal.classList.remove('active');
+                    }
                 }
             });
         }
         
-        window.addEventListener('scroll', checkReveal);
+        // Первоначальная проверка при загрузке
         checkReveal();
 
         // Модальные окна (функции остаются без изменений)
@@ -373,7 +395,7 @@
             }
             // detect clicks outside the navigation entirely and close mobile menu if open
             const menu = document.getElementById('navMenu');
-            if (menu.classList.contains('active') && !e.target.closest('nav')) {
+            if (menu.classList.contains('active') && !e.target.closest('nav') && !e.target.closest('#infoModal')) {
                 toggleMenu();
             }
 
