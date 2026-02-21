@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>21 ВЕК | Полный комплекс отделочных работ в Благовещенске</title>
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+        <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- КРЕАТИВНЫЙ ФОН -->
+    <div class="creative-background">
+        <div class="architectural-lines">
+            <div class="line-vertical"></div>
+            <div class="line-vertical"></div>
+            <div class="line-vertical"></div>
+            <div class="line-vertical"></div>
+            <div class="line-vertical"></div>
+            <div class="line-horizontal"></div>
+            <div class="line-horizontal"></div>
+            <div class="line-horizontal"></div>
+            <div class="line-horizontal"></div>
+        </div>
+        
+        <div class="golden-arcs">
+            <div class="arc arc1"></div>
+            <div class="arc arc2"></div>
+            <div class="arc arc3"></div>
+        </div>
+        
+        <div class="glowing-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <div class="texture-overlay"></div>
+    </div>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home'); return false;">21<span>ВЕК</span></a>
+            <!-- burger menu toggle for small screens -->
+            <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <!-- close control for fullscreen menu -->
+                <li class="menu-close"><i class="fas fa-times" onclick="toggleMenu()"></i></li>
+                <li><a onclick="showPage('home')" class="active">Главная</a></li>
+                <li><a onclick="showPage('services')">Услуги</a></li>
+                <li><a onclick="showPage('partners')">Сотрудничество</a></li>
+                <li><a onclick="showPage('about')">О нас</a></li>
+                <li><a onclick="showPage('contact')">Контакты</a></li>
+                <li class="dropdown">
+                    <a>Юридическая информация ▼</a>
+                    <div class="dropdown-content">
+                        <a onclick="openLegalModal('ip')">ИП Павлов Е.Р.</a>
+                        <a onclick="openLegalModal('ogrn')">ОГРНИП</a>
+                        <a onclick="openLegalModal('inn')">ИНН</a>
+                        <a onclick="openLegalModal('address')">Юридический адрес</a>
+                        <a onclick="openLegalModal('fns')">ФНС</a>
+                        <a onclick="openLegalModal('bank')">Банковские реквизиты</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a>Клиентам ▼</a>
+                    <div class="dropdown-content">
+                        <a onclick="openInfoModal('payment')">Оплата</a>
+                        <a onclick="openInfoModal('delivery')">Доставка</a>
+                        <a onclick="openInfoModal('guarantee')">Гарантии</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ГЛАВНАЯ СТРАНИЦА -->
+    <div id="home-page" class="page">
+        <!-- ГЛАВНЫЙ ЭКРАН -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-subtitle">21 ВЕК - Благовещенск</div>
+                <h1 class="hero-title">Искусство<br>в каждом <span>слое</span></h1>
+                <p class="hero-description">Преображение пространства через совершенство линий и благородство материалов в Амурской области</p>
+                <div class="hero-buttons">
+                    <a href="#" class="hero-btn" onclick="showPage('services'); return false;">Наши услуги</a>
+                    <a href="#" class="hero-btn hero-btn-outline" onclick="showPage('contact'); return false;">Связаться</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТАТИСТИКА -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">лет опыта</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-number">600+</div>
+                        <div class="stat-label">проектов</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">мастеров</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">гарантия</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПАРАЛЛАКС БЛОК 1 -->
+        <section class="parallax-section">
+            <div class="parallax-content reveal">
+                <h2>Мастерство</h2>
+                <p>Каждый проект для нас — это произведение искусства. Мы вкладываем душу в каждую деталь, чтобы результат превзошел ожидания.</p>
+            </div>
+        </section>
+
+        <!-- ПРОЦЕСС РАБОТЫ -->
+        <section class="process">
+            <div class="container">
+                <div class="section-subtitle reveal">Как мы работаем</div>
+                <h2 class="reveal">Процесс сотрудничества</h2>
+                
+                <div class="process-grid">
+                    <div class="process-card reveal">
+                        <div class="process-number">01</div>
+                        <div class="process-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Консультация</h3>
+                        <p>Выезд на объект, обсуждение пожеланий, составление сметы</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-number">02</div>
+                        <div class="process-icon"><i class="fas fa-drafting-compass"></i></div>
+                        <h3>Проект</h3>
+                        <p>Разработка дизайн-проекта с учетом всех ваших пожеланий</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-number">03</div>
+                        <div class="process-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Реализация</h3>
+                        <p>Качественное выполнение работ с поэтапным контролем</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПАРАЛЛАКС БЛОК 2 -->
+        <section class="parallax-section">
+            <div class="parallax-content reveal">
+                <h2>Качество</h2>
+                <p>Используем только премиальные материалы от ведущих мировых производителей. Гарантируем долговечность и безупречный вид.</p>
+            </div>
+        </section>
+
+        <!-- ВИДЫ РАБОТ -->
+        <section class="work-types">
+            <div class="container">
+                <div class="section-subtitle reveal">Наши услуги</div>
+                <h2 class="reveal">Что мы делаем</h2>
+                
+                <div class="work-types-grid">
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-paint-roller"></i>
+                        <h3>Малярные работы</h3>
+                        <p>Покраска стен, потолков, фасадов. Используем премиальные краски Little Greene, Farrow & Ball.</p>
+                        <div class="price-tag">от 300 ₽/м²</div>
+                    </div>
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-border-all"></i>
+                        <h3>Плиточные работы</h3>
+                        <p>Укладка плитки и керамогранита любой сложности. Идеальная геометрия и качественная затирка.</p>
+                        <div class="price-tag">от 800 ₽/м²</div>
+                    </div>
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-trowel"></i>
+                        <h3>Штукатурные работы</h3>
+                        <p>Выравнивание стен, декоративная штукатурка, венецианка, создание уникальных фактур.</p>
+                        <div class="price-tag">от 450 ₽/м²</div>
+                    </div>
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-hammer"></i>
+                        <h3>Демонтажные работы</h3>
+                        <p>Демонтаж стен, перегородок, старых покрытий. Вывоз и утилизация мусора.</p>
+                        <div class="price-tag">от 400 ₽/м²</div>
+                    </div>
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-border-all"></i>
+                        <h3>Монтаж потолков</h3>
+                        <p>Натяжные потолки, гипсокартонные конструкции, многоуровневые решения с подсветкой.</p>
+                        <div class="price-tag">от 500 ₽/м²</div>
+                    </div>
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Декоративные покрытия</h3>
+                        <p>Венецианская штукатурка, имитация бетона, металла, дерева. Авторские текстуры.</p>
+                        <div class="price-tag">от 900 ₽/м²</div>
+                    </div>
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-ruler-combined"></i>
+                        <h3>Отделка под ключ</h3>
+                        <p>Полный комплекс работ от черновой отделки до финишной. Индивидуальный подход.</p>
+                        <div class="price-tag">от 5800 ₽/м²</div>
+                    </div>
+                    <div class="work-type-card reveal">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <h3>Дизайн-проекты</h3>
+                        <p>Разработка индивидуального дизайн-проекта с 3D-визуализацией и подбором материалов.</p>
+                        <div class="price-tag">от 500 ₽/м²</div>
+                    </div>
+                </div>
+                
+                <div class="all-services-btn reveal">
+                    <button class="hero-btn" onclick="showPage('services')">Полный список услуг <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПАРАЛЛАКС БЛОК 3 -->
+        <section class="parallax-section">
+            <div class="parallax-content reveal">
+                <h2>Команда</h2>
+                <p>25 штатных мастеров с многолетним опытом. Каждый прошел строгий отбор и регулярно повышает квалификацию.</p>
+            </div>
+        </section>
+
+        <!-- ПОЧЕМУ МЫ -->
+        <section class="why-us">
+            <div class="container">
+                <div class="section-subtitle reveal">Преимущества</div>
+                <h2 class="reveal">Почему выбирают нас</h2>
+                
+                <div class="why-us-grid">
+                    <div class="why-us-card reveal">
+                        <i class="fas fa-medal"></i>
+                        <h3>10 лет опыта</h3>
+                        <p>Более 600 реализованных проектов. Работаем с 2016 года. Знаем все тонкости отделочных работ.</p>
+                    </div>
+                    <div class="why-us-card reveal">
+                        <i class="fas fa-users"></i>
+                        <h3>Своя команда</h3>
+                        <p>25 штатных мастеров. Не привлекаем субподрядчиков. Лично отвечаем за качество.</p>
+                    </div>
+                    <div class="why-us-card reveal">
+                        <i class="fas fa-file-signature"></i>
+                        <h3>Официальный договор</h3>
+                        <p>Фиксируем сроки и стоимость. Никаких скрытых платежей. Прозрачная смета.</p>
+                    </div>
+                    <div class="why-us-card reveal">
+                        <i class="fas fa-clock"></i>
+                        <h3>Соблюдение сроков</h3>
+                        <p>90% проектов сдаем досрочно. Четкое планирование и контроль на каждом этапе.</p>
+                    </div>
+                    <div class="why-us-card reveal">
+                        <i class="fas fa-broom"></i>
+                        <h3>Чистота и порядок</h3>
+                        <p>Ежедневная уборка. Вывоз мусора. Работаем аккуратно, не доставляем дискомфорта.</p>
+                    </div>
+                    <div class="why-us-card reveal">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Гарантия 3 года</h3>
+                        <p>Даем гарантию на все виды работ. В случае проблем устраняем бесплатно.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЦИФРЫ И ФАКТЫ -->
+        <section class="facts">
+            <div class="container">
+                <div class="section-subtitle reveal">В цифрах</div>
+                <h2 class="reveal">Больше чем просто ремонт</h2>
+                
+                <div class="facts-grid">
+                    <div class="fact-card reveal">
+                        <i class="fas fa-home"></i>
+                        <div class="fact-number">450+</div>
+                        <div class="fact-label">квартир</div>
+                    </div>
+                    <div class="fact-card reveal">
+                        <i class="fas fa-building"></i>
+                        <div class="fact-number">120+</div>
+                        <div class="fact-label">домов</div>
+                    </div>
+                    <div class="fact-card reveal">
+                        <i class="fas fa-store"></i>
+                        <div class="fact-number">80+</div>
+                        <div class="fact-label">коммерческих объектов</div>
+                    </div>
+                    <div class="fact-card reveal">
+                        <i class="fas fa-industry"></i>
+                        <div class="fact-number">30+</div>
+                        <div class="fact-label">промышленных объектов</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПАРАЛЛАКС БЛОК 4 -->
+        <section class="parallax-section">
+            <div class="parallax-content reveal">
+                <h2>Надежность</h2>
+                <p>Работаем с крупнейшими застройщиками и промышленными предприятиями региона. Доверие подтверждено годами.</p>
+            </div>
+        </section>
+
+        <!-- КОНТАКТНАЯ И ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ -->
+        <section class="contact-info-block">
+            <div class="container">
+                <div class="section-subtitle reveal">Контакты</div>
+                <h2 class="reveal">Свяжитесь с нами</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-details reveal">
+                        <h3><i class="fas fa-phone-alt"></i> Контакты</h3>
+                        <p><i class="fas fa-user-tie"></i> Генеральный директор: <b>+7 (929) 579-9499</b></p>
+                        <p><i class="fas fa-info-circle"></i> Справочная информация: <b>+7 (924) 346-9996</b></p>
+                        <p><i class="fas fa-envelope"></i> Email: info@21vek.blg.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Адрес для корреспонденции: с. Белогорье, ул. Заозерная, д. 29/1</p>
+                        <p><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 20:00, Сб-Вс: по записи</p>
+                        
+                        <div style="margin-top: 30px;">
+                            <h4>Реквизиты компании</h4>
+                            <p><i class="fas fa-user"></i> ИП Павлов Евгений Робертович</p>
+                            <p><i class="fas fa-file"></i> ОГРНИП 325280000047362</p>
+                            <p><i class="fas fa-id-card"></i> ИНН 282100679869</p>
+                            <p><i class="fas fa-building"></i> Управление Федеральной налоговой службы по Амурской области</p>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-info reveal">
+                        <h3><i class="fas fa-university"></i> Банковские реквизиты</h3>
+                        <p><i class="fas fa-building"></i> ФИЛИАЛ "ХАБАРОВСКИЙ" АО "АЛЬФА-БАНК"</p>
+                        <p><i class="fas fa-qrcode"></i> БИК: 040813770</p>
+                        <p><i class="fas fa-credit-card"></i> Кор. счёт: 30101810800000000770</p>
+                        
+                        <div style="margin-top: 30px;">
+                            <h4>Юридический адрес</h4>
+                            <p><i class="fas fa-location-dot"></i> 675000, г.о. Благовещенск, с. Белогорье, ул. Заозерная, д. 29/1</p>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <h4>Наши специалисты</h4>
+                            <p>Ответят на все вопросы и помогут рассчитать стоимость работ.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- СТРАНИЦА УСЛУГ -->
+    <div id="services-page" class="page" style="display: none;">
+        <section class="services">
+            <div class="container">
+                <div class="page-header" style="text-align: center; margin-bottom: 60px;">
+                    <div class="section-subtitle reveal">Наши услуги</div>
+                    <h1 class="reveal">Полный <span>спектр</span> работ</h1>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Демонтаж -->
+                    <div class="service-card reveal" onclick="openServiceModal('demolition')">
+                        <div class="service-icon"><i class="fas fa-hammer"></i></div>
+                        <h3>Демонтаж</h3>
+                        <ul class="service-items">
+                            <li onclick="openDetailModal('demolition_walls', event)">
+                                <i class="fas fa-check"></i> Демонтаж стен и перегородок
+                            </li>
+                            <li onclick="openDetailModal('demolition_cover', event)">
+                                <i class="fas fa-check"></i> Демонтаж старых покрытий
+                            </li>
+                            <li onclick="openDetailModal('demolition_trash', event)">
+                                <i class="fas fa-check"></i> Вывоз и утилизация мусора
+                            </li>
+                            <li onclick="openDetailModal('demolition_sanitary', event)">
+                                <i class="fas fa-check"></i> Демонтаж сантехники
+                            </li>
+                            <li onclick="openDetailModal('demolition_electric', event)">
+                                <i class="fas fa-check"></i> Демонтаж электропроводки
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Стены -->
+                    <div class="service-card reveal" onclick="openServiceModal('walls')">
+                        <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+                        <h3>Стены</h3>
+                        <ul class="service-items">
+                            <li onclick="openDetailModal('walls_putty', event)">
+                                <i class="fas fa-check"></i> Шпаклевка и выравнивание
+                            </li>
+                            <li onclick="openDetailModal('walls_paint', event)">
+                                <i class="fas fa-check"></i> Премиальная покраска
+                            </li>
+                            <li onclick="openDetailModal('walls_wallpaper', event)">
+                                <i class="fas fa-check"></i> Поклейка обоев
+                            </li>
+                            <li onclick="openDetailModal('walls_plaster', event)">
+                                <i class="fas fa-check"></i> Декоративная штукатурка
+                            </li>
+                            <li onclick="openDetailModal('walls_primer', event)">
+                                <i class="fas fa-check"></i> Грунтование
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Потолки -->
+                    <div class="service-card reveal" onclick="openServiceModal('ceilings')">
+                        <div class="service-icon"><i class="fas fa-border-all"></i></div>
+                        <h3>Потолки</h3>
+                        <ul class="service-items">
+                            <li onclick="openDetailModal('ceilings_putty', event)">
+                                <i class="fas fa-check"></i> Шпаклевка потолков
+                            </li>
+                            <li onclick="openDetailModal('ceilings_paint', event)">
+                                <i class="fas fa-check"></i> Покраска потолков
+                            </li>
+                            <li onclick="openDetailModal('ceilings_stretch', event)">
+                                <i class="fas fa-check"></i> Натяжные потолки
+                            </li>
+                            <li onclick="openDetailModal('ceilings_multilevel', event)">
+                                <i class="fas fa-check"></i> Многоуровневые потолки
+                            </li>
+                            <li onclick="openDetailModal('ceilings_light', event)">
+                                <i class="fas fa-check"></i> Монтаж подсветки
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Полы -->
+                    <div class="service-card reveal" onclick="openServiceModal('floors')">
+                        <div class="service-icon"><i class="fas fa-border-all"></i></div>
+                        <h3>Полы</h3>
+                        <ul class="service-items">
+                            <li onclick="openDetailModal('floors_screed', event)">
+                                <i class="fas fa-check"></i> Стяжка пола
+                            </li>
+                            <li onclick="openDetailModal('floors_tile', event)">
+                                <i class="fas fa-check"></i> Укладка плитки
+                            </li>
+                            <li onclick="openDetailModal('floors_porcelain', event)">
+                                <i class="fas fa-check"></i> Укладка керамогранита
+                            </li>
+                            <li onclick="openDetailModal('floors_waterproof', event)">
+                                <i class="fas fa-check"></i> Гидроизоляция
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- СТРАНИЦА СОТРУДНИЧЕСТВА -->
+    <div id="partners-page" class="page" style="display: none;">
+        <section class="partners">
+            <div class="container">
+                <div class="page-header" style="text-align: center; margin-bottom: 60px;">
+                    <div class="section-subtitle reveal">Сотрудничество</div>
+                    <h1 class="reveal">Вместе к <span>успеху</span></h1>
+                </div>
+                
+                <div class="partners-grid">
+                    <!-- Наши партнеры -->
+                    <div class="partners-section reveal">
+                        <h3>🤝 Нас знают и доверяют</h3>
+                        <div class="partners-list">
+                            <div class="partner-item" onclick="openPartnerModal('gazprom')">
+                                <i class="fas fa-industry"></i>
+                                <h4>Газпром</h4>
+                                <p>Амурский ГПЗ</p>
+                            </div>
+                            <div class="partner-item" onclick="openPartnerModal('fenix')">
+                                <i class="fas fa-hard-hat"></i>
+                                <h4>Феникс Строй</h4>
+                                <p>г. Благовещенск, ул. Ленина, 127</p>
+                            </div>
+                            <div class="partner-item" onclick="openPartnerModal('amurstroy')">
+                                <i class="fas fa-building"></i>
+                                <h4>АмурСтройИнвест</h4>
+                                <p>ул. 50 лет Октября, 45</p>
+                            </div>
+                            <div class="partner-item" onclick="openPartnerModal('vostok')">
+                                <i class="fas fa-trowel"></i>
+                                <h4>СК "Восток"</h4>
+                                <p>ул. Горького, 156</p>
+                            </div>
+                            <div class="partner-item" onclick="openPartnerModal('dalspec')">
+                                <i class="fas fa-crane"></i>
+                                <h4>Дальспецстрой</h4>
+                                <p>Игнатьевское шоссе, 18</p>
+                            </div>
+                            <div class="partner-item" onclick="openPartnerModal('belvektor')">
+                                <i class="fas fa-ruler-combined"></i>
+                                <h4>Белвекторстрой</h4>
+                                <p>ул. Забурхановская, 96</p>
+                            </div>
+                            <div class="partner-item" onclick="openPartnerModal('stroypartner')">
+                                <i class="fas fa-draw-polygon"></i>
+                                <h4>Стройпартнер ДВ</h4>
+                                <p>ул. Театральная, 14А</p>
+                            </div>
+                            <div class="partner-item" onclick="openPartnerModal('pik')">
+                                <i class="fas fa-helmet-safety"></i>
+                                <h4>ПИК Благовещенск</h4>
+                                <p>Специализированный застройщик</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Вакансии -->
+                    <div class="partners-section reveal">
+                        <h3>👥 Работа у нас</h3>
+                        <ul class="job-list">
+                            <li onclick="openJobModal('master')">
+                                <div class="job-title">Мастер отделочных работ</div>
+                                <div class="job-desc">Опыт от 3 лет, полный день, работа в Благовещенске</div>
+                                <span class="job-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                            </li>
+                            <li onclick="openJobModal('plasterer')">
+                                <div class="job-title">Штукатур-маляр</div>
+                                <div class="job-desc">Опыт от 2 лет, работа по Амурской области</div>
+                                <span class="job-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                            </li>
+                            <li onclick="openJobModal('designer')">
+                                <div class="job-title">Дизайнер интерьеров</div>
+                                <div class="job-desc">Портфолио, знание программ, работа в офисе</div>
+                                <span class="job-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                            </li>
+                            <li onclick="openJobModal('prorab')">
+                                <div class="job-title">Прораб</div>
+                                <div class="job-desc">Опыт управления проектами, объекты в Благовещенске</div>
+                                <span class="job-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- СТРАНИЦА О НАС -->
+    <div id="about-page" class="page" style="display: none;">
+        <section class="about">
+            <div class="container">
+                <div class="page-header" style="text-align: center; margin-bottom: 60px;">
+                    <div class="section-subtitle reveal">О компании</div>
+                    <h1 class="reveal">21 <span>ВЕК</span></h1>
+                </div>
+                
+                <div class="about-showcase">
+                    <div class="about-stats-carousel reveal">
+                        <div class="carousel-slide active">
+                            <div class="carousel-number">10+</div>
+                            <h3 class="carousel-title">Лет опыта</h3>
+                            <p class="carousel-text">Более 10 лет успешной работы на рынке отделочных работ в Амурской области</p>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="carousel-number">600+</div>
+                            <h3 class="carousel-title">Проектов</h3>
+                            <p class="carousel-text">Реализованных проектов различной сложности</p>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="carousel-number">25+</div>
+                            <h3 class="carousel-title">Мастеров</h3>
+                            <p class="carousel-text">Сертифицированных специалистов в штате</p>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="carousel-number">3</div>
+                            <h3 class="carousel-title">Года гарантии</h3>
+                            <p class="carousel-text">На все виды выполненных работ</p>
+                        </div>
+                        
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="changeSlide(0)"></span>
+                            <span class="carousel-dot" onclick="changeSlide(1)"></span>
+                            <span class="carousel-dot" onclick="changeSlide(2)"></span>
+                            <span class="carousel-dot" onclick="changeSlide(3)"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content reveal">
+                        <h3>Философия качества</h3>
+                        
+                        <div class="about-text-block">
+                            <p>Компания «21 ВЕК» основана в 2016 году командой профессионалов, объединенных страстью к совершенству. За 10 лет работы мы создали более 600 уникальных пространств — от уютных квартир до элитных особняков и коммерческих помещений в Благовещенске и Амурской области.</p>
+                            <p>Наш подход строится на трех китах: индивидуальный дизайн-проект, премиальные материалы и безупречное исполнение. Мы не привлекаем субподрядчиков — все работы выполняют наши штатные мастера.</p>
+                        </div>
+                        
+                        <div class="about-features-grid">
+                            <div class="about-feature-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Соблюдение сроков</span>
+                            </div>
+                            <div class="about-feature-item">
+                                <i class="fas fa-broom"></i>
+                                <span>Чистота и порядок</span>
+                            </div>
+                            <div class="about-feature-item">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Прозрачная смета</span>
+                            </div>
+                            <div class="about-feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Гарантия 3 года</span>
+                            </div>
+                        </div>
+                        
+                        <div class="about-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2016</div>
+                                <div class="timeline-text">Основание компании, первые проекты</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2018</div>
+                                <div class="timeline-text">Расширение штата до 15 мастеров</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2020</div>
+                                <div class="timeline-text">Запуск премиального направления</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2026</div>
+                                <div class="timeline-text">Более 600 реализованных проектов</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- СТРАНИЦА КОНТАКТЫ -->
+    <div id="contact-page" class="page" style="display: none;">
+        <section class="contact">
+            <div class="contact-particles">
+                <div class="contact-particle"></div>
+                <div class="contact-particle"></div>
+                <div class="contact-particle"></div>
+                <div class="contact-particle"></div>
+                <div class="contact-particle"></div>
+                <div class="contact-particle"></div>
+            </div>
+            
+            <div class="container">
+                <div class="page-header" style="text-align: center; margin-bottom: 60px;">
+                    <div class="section-subtitle reveal">Связь с будущим</div>
+                    <h1 class="reveal">Контакты <span>XXI века</span></h1>
+                </div>
+                
+                <div class="contact-showcase">
+                    <div class="contact-card reveal" onclick="window.location.href='tel:+79295799499'">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Генеральный директор</h3>
+                        <div class="contact-detail">+7 (929) 579-9499</div>
+                        <span class="contact-link">Позвонить <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    
+                    <div class="contact-card reveal" onclick="window.location.href='tel:+79243469996'">
+                        <div class="contact-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Справочная</h3>
+                        <div class="contact-detail">+7 (924) 346-9996</div>
+                        <span class="contact-link">Позвонить <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    
+                    <div class="contact-card reveal" onclick="window.open('https://maps.google.com', '_blank')">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Адрес</h3>
+                        <div class="contact-detail">с. Белогорье, ул. Заозерная, 29/1</div>
+                        <span class="contact-link">На карте <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 60px;">
+                    <div class="reveal" style="display: inline-flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-clock" style="color: #C5A572;"></i>
+                            <span>Пн-Пт: 9:00 - 20:00</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-calendar-alt" style="color: #C5A572;"></i>
+                            <span>Сб-Вс: по записи</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-globe" style="color: #C5A572;"></i>
+                            <span>Работаем по всей Амурской области</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>21 ВЕК</h4>
+                    <p>Полный комплекс отделочных работ в Благовещенске и Амурской области</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a onclick="showPage('home')">Главная</a></li>
+                        <li><a onclick="showPage('services')">Услуги</a></li>
+                        <li><a onclick="showPage('partners')">Сотрудничество</a></li>
+                        <li><a onclick="showPage('about')">О нас</a></li>
+                        <li><a onclick="showPage('contact')">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Клиентам</h4>
+                    <ul>
+                        <li><a onclick="openInfoModal('payment')">Оплата</a></li>
+                        <li><a onclick="openInfoModal('delivery')">Доставка</a></li>
+                        <li><a onclick="openInfoModal('guarantee')">Гарантии</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Юр. информация</h4>
+                    <ul>
+                        <li><a onclick="openLegalModal('ip')">ИП Павлов Е.Р.</a></li>
+                        <li><a onclick="openLegalModal('ogrn')">ОГРНИП</a></li>
+                        <li><a onclick="openLegalModal('inn')">ИНН</a></li>
+                        <li><a onclick="openLegalModal('bank')">Банк</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>© 2026 21 ВЕК. Все права защищены</div>
+                <div class="footer-social">
+                    <a onclick="openBannedModal('instagram')"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Заголовок</h3>
+            <div id="modalBody"></div>
+            <div class="modal-buttons">
+                <button class="modal-btn" onclick="closeModal(); showPage('contact')">Связаться</button>
+                <button class="modal-btn modal-btn-outline" onclick="closeModal()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+        <script src="js/main.js"></script>
+</body>
+</html>
