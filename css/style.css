@@ -296,14 +296,15 @@
 
         .nav-container {
             display: flex;
-            justify-content: center; /* center menu items horizontally */
+            justify-content: space-between; /* logo on left, menu on right */
             align-items: center;
             padding: 0 40px;
             position: relative;
         }
         .logo {
-            position: absolute;
-            left: 40px;
+            /* keep logo in normal flow instead of absolute positioning */
+            position: relative;
+            left: 0;
         }
 
         .logo {
@@ -326,7 +327,7 @@
             display: flex;
             list-style: none;
             gap: 30px;
-            margin: 0 auto; /* center menu, leave space for logo on left */
+            margin: 0; /* flex container spacing handles placement */
         }
 
         .nav-menu a {
@@ -340,6 +341,11 @@
             position: relative;
             cursor: pointer;
             white-space: nowrap;
+        }
+
+        /* close button hidden by default; only used in mobile overlay */
+        .nav-menu .menu-close {
+            display: none;
         }
 
         .nav-menu a:after {
@@ -383,15 +389,11 @@
 
         
         /* responsive tweaks */
-        /* ensure space for logo so it doesn't overlap menu links */
-        .nav-container {
-            padding-left: 120px; /* leave room for absolute logo */
-        }
+        /* nav-container already has horizontal padding; no extra left padding needed now that flex handles spacing */
         @media (max-width: 1200px) {
             .container {padding: 0 20px;}
             .nav-container {
                 padding: 0 20px;
-                padding-left: 80px;
             }
         }
 
@@ -497,6 +499,7 @@
                 font-size: 2rem;
                 cursor: pointer;
                 color: #FFFFFF;
+                display: block; /* show close icon when mobile menu active */
             }
             .nav-menu.active { display: flex; }
             .nav-menu a {
