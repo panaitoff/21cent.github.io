@@ -97,6 +97,18 @@
     }
     .parallax-content h2 { font-size: 48px; }
     .parallax-content p { font-size: 16px; }
+
+    .contact-card {
+            padding: 50px 30px;
+    }
+    .contact-icon {
+        margin-bottom: 0px;
+    }
+    
+    .contact-link {
+        font-size: 12px;
+        padding: 9px 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -140,11 +152,13 @@
     .why-us-grid,
     .facts-grid,
     .contact-grid,
-    .contact-showcase,
     .footer-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
     .menu-toggle { display: block; }
+    .contact-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
@@ -213,7 +227,6 @@
     .why-us-grid,
     .facts-grid,
     .contact-grid,
-    .contact-showcase,
     .footer-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
