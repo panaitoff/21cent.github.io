@@ -30,6 +30,11 @@
             position: relative;
         }
 
+        /* отступ сверху у игровых страниц чтобы не уезжали под фиксированную шапку */
+        .page {
+            padding-top: 80px; /* приблизительная высота navbar */
+        }
+
         img {
             max-width: 100%;
             height: auto;
@@ -479,7 +484,7 @@
 
         /* ========== ХЕДЕР ========== */
         .hero {
-            min-height: 100vh;
+            min-height: 70vh;
             position: relative;
             display: flex;
             align-items: center;
@@ -687,7 +692,7 @@
         /* ========== ПАРАЛЛАКС БЛОК ========== */
         .parallax-section {
             position: relative;
-            min-height: 80vh;
+            min-height: 40vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1096,7 +1101,7 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
+            gap: 30px;
             margin-top: 60px;
         }
 

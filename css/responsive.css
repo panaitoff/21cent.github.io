@@ -40,7 +40,6 @@
 
 @media (max-width: 1024px) {
     /* allow two columns on tablet/large phones instead of single stack */
-    .stats-grid,
     .process-grid,
     .work-types-grid,
     .why-us-grid,
@@ -152,6 +151,7 @@
     .why-us-grid,
     .facts-grid,
     .contact-grid,
+    .stats-grid,
     .footer-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -226,7 +226,6 @@
     .work-types-grid,
     .why-us-grid,
     .facts-grid,
-    .contact-grid,
     .footer-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -237,6 +236,24 @@
     /* about showcase becomes single column with carousel on top */
     .about-showcase {
         grid-template-columns: 1fr;
+    }
+    .about-text-block {
+        padding-left: 0px; 
+        border-left: none;
+        max-width: 310px;
+        justify-self: center;
+    }
+    .about-text-block p {
+        font-size: 15px;   
+    }
+    .about-content h3 {
+        font-size: 32px;
+        justify-self: center;
+
+    }
+    .contact-grid {
+        gap: 20px;
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 }
 
