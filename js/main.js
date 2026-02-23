@@ -136,6 +136,9 @@
             }
             
             window.scrollTo(0, 0);
+            // ensure any reveal elements on the newly shown page are activated
+            // a small timeout lets the browser paint the new page before measuring
+            setTimeout(checkReveal, 50);
             
             if (pageName === 'about') {
                 startCarousel();
