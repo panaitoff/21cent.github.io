@@ -157,6 +157,11 @@
     .contact-showcase {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
+    .nav-menu .logo {
+        font-size: 52px;
+        top: -40px;
+        display: block;
+    }
 }
 
 @media (max-width: 768px) {

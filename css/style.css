@@ -302,7 +302,10 @@
             position: relative;
             left: 0;
         }
-
+        
+        .nav-menu .logo {
+            display: none;
+        }
         .logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 32px;
