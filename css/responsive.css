@@ -29,9 +29,8 @@
 @media (max-width: 1024px) {
     .nav-menu {
         gap: 20px;
-        flex-wrap: wrap;
         justify-content: center;
-        overflow-x: auto;
+        overflow-y: auto;
     }
     .nav-menu a {
         font-size: 12px;
