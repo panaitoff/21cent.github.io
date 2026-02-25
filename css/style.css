@@ -292,7 +292,7 @@
 
         .nav-container {
             display: flex;
-            justify-content: space-between; /* logo on left, menu on right */
+            /* keep logo and menu in flow; menu will be centered via absolute positioning */
             align-items: center;
             padding: 0 40px;
             position: relative;
@@ -324,6 +324,9 @@
             list-style: none;
             gap: 30px;
             margin: 0; /* flex container spacing handles placement */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .nav-menu a {
