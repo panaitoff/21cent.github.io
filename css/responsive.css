@@ -86,7 +86,15 @@
     .about-stats-carousel {
         order: -1;
         margin-bottom: 50px;
-        height: auto;
+        height: 420px;
+        width: auto;
+    }
+    .carousel-number {
+        font-size: 90px;
+        margin-bottom: 5px;
+    }
+    .carousel-title {
+        font-size: 24px;
     }
     /* parallax content gets narrow margins and smaller text on tablet sizes */
     .parallax-content {
@@ -354,6 +362,30 @@
     }
     .service-card h3 { font-size: 18px; }
     .service-icon i { font-size: 2rem; }
+
+    .about-stats-carousel {
+        order: -1;
+        margin-bottom: 50px;
+        height: 360px;
+        width: 300px;
+        margin: 0 auto;
+    }
+    .carousel-number {
+        font-size: 90px;
+        margin-bottom: 5px;
+    }
+    .carousel-title {
+        font-size: 24px;
+    }
+    .carousel-text {
+        font-size: 12px;
+    }
+    .about-text-block {
+        font-size: 12px;
+    }
+    .about-content {
+        width: 310px;
+    }
 }
 
 /* ========== УСИЛЕННЫЕ ПАРАЛЛАКС АНИМАЦИИ ========== */

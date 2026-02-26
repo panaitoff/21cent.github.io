@@ -383,7 +383,7 @@
             conditionsHTML += '</ul>';
             
             title.textContent = jobs[job].title;
-            body.innerHTML = `<p>${jobs[job].description}</p>${requirementsHTML}${conditionsHTML}<p style="color: #C5A572; margin-top: 20px;"><i class="fas fa-envelope"></i> Резюме: hr@21vek.blg.ru</p>`;
+            body.innerHTML = `<p>${jobs[job].description}</p>${requirementsHTML}${conditionsHTML}<p style="color: #C5A572; margin-top: 20px;"><i class="fas fa-envelope"></i> Резюме: 21vek.blg@list.ru</p>`;
             modal.classList.add('active');
         }
 
